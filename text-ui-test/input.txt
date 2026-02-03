@@ -1,0 +1,19 @@
+cooking
+list
+reading
+mark 1
+list
+mark 2
+list
+mark 3
+list
+unmark 2
+todo borrow book
+mark 3
+list
+deadline return book \by sunday
+deafline return book /by sunday
+list
+event project meeting /from Mon 2pm /to 4pm
+list
+bye

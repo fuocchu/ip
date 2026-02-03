@@ -1,7 +1,48 @@
-Hello from
- ____        _        
-|  _ \ _   _| | _____ 
-| | | | | | | |/ / _ \
-| |_| | |_| |   <  __/
-|____/ \__,_|_|\_\___|
-
+Hello! I'm TreeBuddy
+What can I do for you?
+added: cooking
+Here are the tasks in your list:
+1.[ ] cooking
+added: reading
+Nice! I've marked this task as done:
+  [X] cooking
+Here are the tasks in your list:
+1.[X] cooking
+2.[ ] reading
+Nice! I've marked this task as done:
+  [X] reading
+Here are the tasks in your list:
+1.[X] cooking
+2.[X] reading
+Invalid task number.
+Here are the tasks in your list:
+1.[X] cooking
+2.[X] reading
+OK, I've marked this task as not done yet:
+  [ ] reading
+Got it. I've added this task:
+  [T][ ] borrow book
+Now you have 3 tasks in the list.
+Nice! I've marked this task as done:
+  [T][X] borrow book
+Here are the tasks in your list:
+1.[X] cooking
+2.[ ] reading
+3.[T][X] borrow book
+Please specify /by for deadline.
+added: deafline return book /by sunday
+Here are the tasks in your list:
+1.[X] cooking
+2.[ ] reading
+3.[T][X] borrow book
+4.[ ] deafline return book /by sunday
+Got it. I've added this task:
+  [E][ ] project meeting (from: Mon 2pm to: 4pm)
+Now you have 5 tasks in the list.
+Here are the tasks in your list:
+1.[X] cooking
+2.[ ] reading
+3.[T][X] borrow book
+4.[ ] deafline return book /by sunday
+5.[E][ ] project meeting (from: Mon 2pm to: 4pm)
+Bye. Hope to see you again soon!

@@ -49,6 +49,45 @@ public class TreeBuddy {
                 } catch (Exception e) {
                     System.out.println("Invalid command format. Use: unmark <task_number>");
                 }
+
+            } else if (input.startsWith("todo ")) {
+                String desc = input.substring(5).trim();
+                Task t = new ToDo(desc);
+                tasks.add(t);
+                System.out.println("Got it. I've added this task:");
+                System.out.println("  " + t);
+                System.out.println("Now you have " + tasks.size() + " tasks in the list.");
+
+            } else if (input.startsWith("deadline ")) {
+                String[] parts = input.substring(9).split("/by", 2);
+                if (parts.length < 2) {
+                    System.out.println("Please specify /by for deadline.");
+                } else {
+                    Task t = new Deadline(parts[0].trim(), parts[1].trim());
+                    tasks.add(t);
+                    System.out.println("Got it. I've added this task:");
+                    System.out.println("  " + t);
+                    System.out.println("Now you have " + tasks.size() + " tasks in the list.");
+                }
+
+            } else if (input.startsWith("event ")) {
+                String[] partsFrom = input.substring(6).split("/from", 2);
+                if (partsFrom.length < 2) {
+                    System.out.println("Please specify /from and /to for event.");
+                } else {
+                    String desc = partsFrom[0].trim();
+                    String[] partsTo = partsFrom[1].split("/to", 2);
+                    if (partsTo.length < 2) {
+                        System.out.println("Please specify /to for event.");
+                    } else {
+                        Task t = new Event(desc, partsTo[0].trim(), partsTo[1].trim());
+                        tasks.add(t);
+                        System.out.println("Got it. I've added this task:");
+                        System.out.println("  " + t);
+                        System.out.println("Now you have " + tasks.size() + " tasks in the list.");
+                    }
+                }
+
             } else {
                 tasks.add(new Task(input));
                 System.out.println("added: " + input);
