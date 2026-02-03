@@ -1,5 +1,5 @@
 @ECHO OFF
-
+REM This commit combines Level-4 and A-TextUITesting because I accidentally committed them together. The purpose of this commit is only to distinguish these two increments for clarity.
 REM create bin directory if it doesn't exist
 if not exist ..\bin mkdir ..\bin
 
