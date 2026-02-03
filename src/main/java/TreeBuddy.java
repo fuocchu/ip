@@ -3,14 +3,14 @@ import java.util.Scanner;
 
 public class TreeBuddy {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         ArrayList<Task> tasks = new ArrayList<>();
         System.out.println("Hello! I'm TreeBuddy");
         System.out.println("What can I do for you?");
 
         boolean exit = false;
         while (!exit) {
-            String input = sc.nextLine().trim();
+            String input = scanner.nextLine().trim();
 
             if (input.equals("bye")) {
                 exit = true;
