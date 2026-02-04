@@ -5,6 +5,7 @@ public class TreeBuddy {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Task> tasks = new ArrayList<>();
+        Logo.printLogo();
         System.out.println("Hello! I'm TreeBuddy");
         System.out.println("What can I do for you?");
 
