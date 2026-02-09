@@ -34,8 +34,10 @@ public class TreeBuddy {
                     } else {
                         System.out.println("Invalid task number.");
                     }
-                } catch (Exception e) {
+                } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("Invalid command format. Use: mark <task_number>");
+                } catch (NumberFormatException e) {
+                    System.out.println("Please provide a valid number.");
                 }
             } else if (input.startsWith("unmark ")) {
                 try {
@@ -47,10 +49,11 @@ public class TreeBuddy {
                     } else {
                         System.out.println("Invalid task number.");
                     }
-                } catch (Exception e) {
+                } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("Invalid command format. Use: unmark <task_number>");
+                } catch (NumberFormatException e) {
+                    System.out.println("Please provide a valid number.");
                 }
-
             } else if (input.startsWith("todo ")) {
                 String desc = input.substring(5).trim();
                 Task t = new ToDo(desc);
@@ -95,5 +98,6 @@ public class TreeBuddy {
             }
         }
         System.out.println("Bye. Hope to see you again soon!");
+        scanner.close();
     }
 }
