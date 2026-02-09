@@ -1,3 +1,5 @@
+package treebuddy;
+
 public class Logo {
 
     public static void printLogo() {

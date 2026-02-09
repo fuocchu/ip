@@ -1,3 +1,4 @@
+package treebuddy;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -6,7 +7,7 @@ public class TreeBuddy {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Task> tasks = new ArrayList<>();
         Logo.printLogo();
-        System.out.println("Hello! I'm TreeBuddy");
+        System.out.println("Hello! I'm treebuddy.TreeBuddy");
         System.out.println("What can I do for you?");
 
         boolean exit = false;

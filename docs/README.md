@@ -1,8 +1,8 @@
-# TreeBuddy User Guide
+# treebuddy.TreeBuddy User Guide
 
-## ▶ Starting TreeBuddy
+## ▶ Starting treebuddy.TreeBuddy
 
-Run `TreeBuddy.java` and you will see:
+Run `treebuddy.TreeBuddy.java` and you will see:
 ```
   _______              ____            _     _
  |__   __|            |  _ \          | |   | |
@@ -13,18 +13,18 @@ Run `TreeBuddy.java` and you will see:
                                                 __/ |
                                                |___/
 
-Hello! I'm TreeBuddy
+Hello! I'm treebuddy.TreeBuddy
 What can I do for you?
 
 ```
-## ▶ Adding Task
+## ▶ Adding treebuddy.Task
 You can add a task by simply typing its description.
 Example: `cooking`
 ```
 added: cooking
 ```
 You can also add different types of tasks:
-## ▶ Adding a ToDo
+## ▶ Adding a treebuddy.ToDo
 Add a todo task to your list.
 Example: `todo borrow book`
 ```
@@ -49,7 +49,7 @@ Here are the tasks in your list:
 2.[T][ ] borrow book
 3.[D][ ] return book (by: sunday)
 ```
-## Mark/Unmark Task
+## Mark/Unmark treebuddy.Task
 Mark a task as completed. Or mark a task as not done.
 Example: `mark 1`
 ```
@@ -61,7 +61,7 @@ Example: `unmark 1`
 OK, I've marked this task as not done yet:
   [ ] cooking
 ```
-## Adding Event
+## Adding treebuddy.Event
 Add an event with a start and end time.
 Example: `event project meeting /from Mon 2pm /to 4pm`
 ```
@@ -69,7 +69,7 @@ Got it. I've added this task:
   [E][ ] project meeting (from: Mon 2pm to: 4pm)
 Now you have 4 tasks in the list.
 ```
-### Exiting TreeBuddy
+### Exiting treebuddy.TreeBuddy
 Exit the application.
 
 Example: `bye`
