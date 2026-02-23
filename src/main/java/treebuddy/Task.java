@@ -1,9 +1,18 @@
 package treebuddy;
-
+/**
+ * Represents a generic task in TreeBuddy.
+ *
+ * A task has a description and a completion status.
+ * Subclasses include ToDo, Deadline, and Event.
+ */
 public abstract class Task {
     protected String description;
     protected boolean isDone;
-
+    /**
+     * Creates a new Task with the given description.
+     *
+     * @param description The description of the task
+     */
     public Task(String description) {
         this.description = description;
         this.isDone = false;

@@ -1,6 +1,13 @@
 package treebuddy;
-
+/**
+ * Represents a simple task without date or time constraints.
+ */
 public class ToDo extends Task {
+    /**
+     * Creates a new ToDo task.
+     *
+     * @param description Description of the task
+     */
     public ToDo(String description) {
         super(description);
     }

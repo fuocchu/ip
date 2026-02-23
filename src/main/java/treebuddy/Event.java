@@ -1,9 +1,17 @@
 package treebuddy;
-
+/**
+ * Represents a task that occurs during a specific time period.
+ */
 public class Event extends Task {
     private String from;
     private String to;
-
+    /**
+     * Creates a new Event task.
+     *
+     * @param description Description of the event
+     * @param from Start time
+     * @param to End time
+     */
     public Event(String description, String from, String to) {
         super(description);
         this.from = from;

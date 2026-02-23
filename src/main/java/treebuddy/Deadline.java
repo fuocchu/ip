@@ -2,9 +2,17 @@ package treebuddy;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+/**
+ * Represents a task that must be completed before a specific date.
+ */
 public class Deadline extends Task {
     private LocalDate by;
-
+    /**
+     * Creates a new Deadline task.
+     *
+     * @param description Description of the task
+     * @param by Deadline date in ISO format (yyyy-MM-dd)
+     */
     public Deadline(String description, String by) {
         super(description);
         this.by = LocalDate.parse(by);
