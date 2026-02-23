@@ -8,10 +8,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Handles loading and saving tasks to a file.
+ */
 public class Storage {
 
     private String filePath;
-
+    /**
+     * Creates a Storage object with the given file path.
+     *
+     * @param filePath Path to the data file
+     */
     public Storage(String filePath) {
         this.filePath = filePath;
     }
