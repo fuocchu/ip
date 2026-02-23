@@ -50,6 +50,10 @@ public class TreeBuddy {
             printList();
             return false;
         }
+        if (input.startsWith("find ")) {
+            findTask(input);
+            return false;
+        }
 
         if (input.startsWith("delete ")) {
             deleteTask(input);
@@ -82,6 +86,30 @@ public class TreeBuddy {
         }
 
         throw new TreeBuddyException("OOPS!!! I don't understand that command.");
+    }
+    private static void findTask(String input) throws TreeBuddyException {
+        String keyword = input.substring(5).trim();
+
+        if (keyword.isEmpty()) {
+            throw new TreeBuddyException("OOPS!!! The keyword cannot be empty.");
+        }
+
+        System.out.println("Here are the matching tasks in your list:");
+
+        int count = 1;
+        boolean found = false;
+
+        for (Task t : tasks) {
+            if (t.getDescription().toLowerCase().contains(keyword.toLowerCase())) {
+                System.out.println(count + ". " + t);
+                count++;
+                found = true;
+            }
+        }
+
+        if (!found) {
+            System.out.println("No matching tasks found.");
+        }
     }
 
     private static void printList() {
