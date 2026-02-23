@@ -38,7 +38,7 @@ public class TreeBuddy {
                     } else {
                         System.out.println("Here are the tasks in your list:");
                         for (int i = 0; i < tasks.size(); i++) {
-                            System.out.println((i + 1) + "." + tasks.get(i));
+                            System.out.println((i + 1) + ". " + tasks.get(i));
                         }
                     }
                 }
@@ -87,10 +87,15 @@ public class TreeBuddy {
                     storage.save(tasks);
                 }
 
+                else if (input.equals("todo")) {
+                    throw new TreeBuddyException("OOPS!!! The description of a todo cannot be empty.");
+                }
+
                 else if (input.startsWith("todo ")) {
                     String desc = input.substring(5).trim();
+
                     if (desc.isEmpty()) {
-                        throw new TreeBuddyException("Description cannot be empty.");
+                        throw new TreeBuddyException("OOPS!!! The description of a todo cannot be empty.");
                     }
 
                     Task t = new ToDo(desc);
@@ -103,13 +108,25 @@ public class TreeBuddy {
                     storage.save(tasks);
                 }
 
+                else if (input.equals("deadline")) {
+                    throw new TreeBuddyException("OOPS!!! The description of a deadline cannot be empty.");
+                }
+
                 else if (input.startsWith("deadline ")) {
                     String[] parts = input.substring(9).split("/by", 2);
+
                     if (parts.length < 2) {
-                        throw new TreeBuddyException("Please specify /by for deadline.");
+                        throw new TreeBuddyException("OOPS!!! Please specify /by for deadline.");
                     }
 
-                    Task t = new Deadline(parts[0].trim(), parts[1].trim());
+                    String desc = parts[0].trim();
+                    String by = parts[1].trim();
+
+                    if (desc.isEmpty()) {
+                        throw new TreeBuddyException("OOPS!!! The description of a deadline cannot be empty.");
+                    }
+
+                    Task t = new Deadline(desc, by);
                     tasks.add(t);
 
                     System.out.println("Got it. I've added this task:");
@@ -117,13 +134,32 @@ public class TreeBuddy {
                     System.out.println("Now you have " + tasks.size() + " tasks in the list.");
 
                     storage.save(tasks);
+                }
+
+                else if (input.equals("event")) {
+                    throw new TreeBuddyException("OOPS!!! The description of an event cannot be empty.");
                 }
 
                 else if (input.startsWith("event ")) {
                     String[] fromParts = input.substring(6).split("/from", 2);
+
+                    if (fromParts.length < 2) {
+                        throw new TreeBuddyException("OOPS!!! Please specify /from and /to for event.");
+                    }
+
+                    String desc = fromParts[0].trim();
+
+                    if (desc.isEmpty()) {
+                        throw new TreeBuddyException("OOPS!!! The description of an event cannot be empty.");
+                    }
+
                     String[] toParts = fromParts[1].split("/to", 2);
 
-                    Task t = new Event(fromParts[0].trim(), toParts[0].trim(), toParts[1].trim());
+                    if (toParts.length < 2) {
+                        throw new TreeBuddyException("OOPS!!! Please specify /to for event.");
+                    }
+
+                    Task t = new Event(desc, toParts[0].trim(), toParts[1].trim());
                     tasks.add(t);
 
                     System.out.println("Got it. I've added this task:");
@@ -132,15 +168,18 @@ public class TreeBuddy {
 
                     storage.save(tasks);
                 }
+
                 else {
                     throw new TreeBuddyException("OOPS!!! I don't understand that command.");
                 }
+
             } catch (TreeBuddyException e) {
                 System.out.println(e.getMessage());
             } catch (Exception e) {
                 System.out.println("Invalid command format.");
             }
         }
+
         System.out.println("Bye. Hope to see you again soon!");
         scanner.close();
     }
