@@ -1,6 +1,11 @@
 package treebuddy;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Storage {
@@ -16,28 +21,28 @@ public class Storage {
         ArrayList<Task> tasks = new ArrayList<>();
         File file = new File(filePath);
         file.getParentFile().mkdirs();
+
         if (!file.exists()) {
             file.createNewFile();
             return tasks;
         }
+
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
 
         while ((line = br.readLine()) != null) {
             String[] parts = line.split(" \\| ");
-
             String type = parts[0];
             boolean isDone = parts[1].equals("1");
-            String desc = parts[2];
 
-            Task t = null;
+            Task t;
 
             if (type.equals("T")) {
-                t = new ToDo(desc);
+                t = new ToDo(parts[2]);
             } else if (type.equals("D")) {
-                t = new Deadline(desc, parts[3]);
-            } else if (type.equals("E")) {
-                t = new Event(desc, parts[3], parts[4]);
+                t = new Deadline(parts[2], parts[3]);
+            } else {
+                t = new Event(parts[2], parts[3], parts[4]);
             }
 
             if (isDone) {
@@ -53,29 +58,10 @@ public class Storage {
 
     public void save(ArrayList<Task> tasks) throws IOException {
 
-        FileWriter fw = new FileWriter(filePath);
-        BufferedWriter bw = new BufferedWriter(fw);
+        BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));
 
         for (Task t : tasks) {
-
-            String line = "";
-
-            if (t instanceof ToDo) {
-                line = "T | " + (t.isDone ? "1" : "0") + " | " + t.getDescription();
-            }
-            else if (t instanceof Deadline) {
-                Deadline d = (Deadline) t;
-                line = "D | " + (t.isDone ? "1" : "0") + " | "
-                        + t.getDescription() + " | " + d.getBy();
-            }
-            else if (t instanceof Event) {
-                Event e = (Event) t;
-                line = "E | " + (t.isDone ? "1" : "0") + " | "
-                        + t.getDescription() + " | "
-                        + e.getFrom() + " | " + e.getTo();
-            }
-
-            bw.write(line);
+            bw.write(t.toFileString());
             bw.newLine();
         }
         bw.close();
