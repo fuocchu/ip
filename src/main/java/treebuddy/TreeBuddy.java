@@ -10,8 +10,6 @@ public class TreeBuddy {
     private static Storage storage = new Storage("./data/duke.txt");
 
     public static void main(String[] args) {
-
-        // Load tasks from file
         try {
             tasks = storage.load();
         } catch (IOException e) {
@@ -45,7 +43,6 @@ public class TreeBuddy {
                     }
                 }
 
-                // ===== DELETE (LEVEL 6) =====
                 else if (input.startsWith("delete ")) {
                     int index = Integer.parseInt(input.split(" ")[1]) - 1;
 
