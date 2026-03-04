@@ -225,6 +225,13 @@ public class TreeBuddy {
         if (desc.isEmpty()) {
             throw new TreeBuddyException("OOPS!!! The description of a deadline cannot be empty.");
         }
+        try {
+            java.time.LocalDate.parse(by);
+        } catch (Exception e) {
+            throw new TreeBuddyException(
+                    "OOPS!!! Please enter date in format yyyy-MM-dd (e.g. 2026-03-10)."
+            );
+        }
         Task t = new Deadline(desc, by);
         tasks.add(t);
         System.out.println("Got it. I've added this task:");
