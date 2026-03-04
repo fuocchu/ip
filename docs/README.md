@@ -75,13 +75,13 @@ deadline DESCRIPTION /by DATE
 
 ### Example
 ```
-deadline return book /by Sunday
+deadline return /by 2026-03-10
 ```
 
 ### Output
 ```
 Got it. I've added this task:
-  [D][ ] return book (by: Sunday)
+  [D][ ] return (by: Mar 10 2026)
 Now you have 2 tasks in the list.
 ```
 
@@ -127,7 +127,7 @@ list
 ```
 Here are the tasks in your list:
 1. [T][ ] borrow book
-2. [D][ ] return book (by: Sunday)
+2. [D][ ] return book (by: Mar 10 2026)
 3. [E][ ] project meeting (from: Mon 2pm to: 4pm)
 ```
 
