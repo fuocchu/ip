@@ -12,7 +12,7 @@ import java.io.IOException;
 public class TreeBuddy {
 
     private static ArrayList<Task> tasks = new ArrayList<>();
-    private static Storage storage = new Storage("./data/duke.txt");
+    private static Storage storage = new Storage("./data/treebuddy.txt");
     /**
      * Starts the TreeBuddy application.
      *
