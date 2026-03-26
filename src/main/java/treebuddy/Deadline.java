@@ -2,11 +2,14 @@ package treebuddy;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+
 /**
  * Represents a task that must be completed before a specific date.
  */
 public class Deadline extends Task {
+
     private LocalDate by;
+
     /**
      * Creates a new Deadline task.
      *
@@ -18,6 +21,11 @@ public class Deadline extends Task {
         this.by = LocalDate.parse(by);
     }
 
+    /**
+     * Returns the deadline date of this task.
+     *
+     * @return The deadline as a LocalDate
+     */
     public LocalDate getBy() {
         return by;
     }

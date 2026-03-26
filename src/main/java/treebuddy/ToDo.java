@@ -1,8 +1,10 @@
 package treebuddy;
+
 /**
  * Represents a simple task without date or time constraints.
  */
 public class ToDo extends Task {
+
     /**
      * Creates a new ToDo task.
      *
@@ -16,6 +18,7 @@ public class ToDo extends Task {
     public String toString() {
         return "[T]" + super.toString();
     }
+
     @Override
     public String toFileString() {
         return "T | " + (isDone ? "1" : "0") + " | " + description;
